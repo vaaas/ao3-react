@@ -1,0 +1,21 @@
+{
+	"name": "ao3-react",
+	"version": "0.0.0",
+	"description": "react front-end for ao3",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "node node_modules/webpack-cli/bin/cli.js"
+	},
+	"author": "Vasileios Pasialiokis",
+	"license": "AGPL-3.0-or-later",
+	"dependencies": {
+		"@babel/preset-react": "^7.16.0",
+		"babel": "^6.23.0",
+		"babel-loader": "^8.2.3",
+		"css-loader": "^6.5.1",
+		"preact": "^10.6.1",
+		"style-loader": "^3.3.1",
+		"webpack-cli": "^4.9.1"
+	}
+}
