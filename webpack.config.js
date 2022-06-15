@@ -16,7 +16,7 @@ export default {
 
 	watch: !prod,
 
-	entry: path.resolve(path.join('.', 'src', 'index.tsx')),
+	entry: path.resolve(path.join('.', 'src', 'index.ts')),
 
 	output: {
 		path: path.resolve(path.join('.', 'build')),
