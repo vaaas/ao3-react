@@ -1,7 +1,7 @@
 {
+	"name": "ao3-react",
 	"author": "Vasileios Pasialiokis",
 	"license": "AGPL-3.0-or-later",
-	"name": "ao3-react",
 	"type": "module",
 	"version": "0.0.0",
 	"description": "react front-end for ao3",

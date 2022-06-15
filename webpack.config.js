@@ -20,7 +20,7 @@ export default {
 
 	output: {
 		path: path.resolve(path.join('.', 'build')),
-		filename: 'ao3-react.js',
+		filename: 'index.js',
 	},
 
 	resolve: {
