@@ -1,15 +1,31 @@
-const path = require('path')
-module.exports = {
-	mode: 'development',
+import * as path from 'path'
 
-	entry: path.join(__dirname, 'src', 'index.js'),
+const babel_options = {
+	plugins: [
+		["@babel/plugin-transform-react-jsx", {
+			"pragma": "h",
+			"pragmaFrag": "Fragment",
+		}]
+	],
+}
+
+const prod = process.env.ENV === 'production'
+
+export default {
+	mode: prod ? 'production' : 'development',
+
+	watch: !prod,
+
+	entry: path.resolve(path.join('.', 'src', 'index.tsx')),
 
 	output: {
-		path: path.join(__dirname, 'build'),
+		path: path.resolve(path.join('.', 'build')),
 		filename: 'ao3-react.js',
 	},
 
 	resolve: {
+		extensions: ['.tsx', '.ts', '.js'],
+
 		alias: {
 			'react': 'preact/compat',
 			'react-dom': 'preact/compat',
@@ -22,18 +38,18 @@ module.exports = {
 				test: /\.css$/,
 				use: ['style-loader', 'css-loader'],
 			},
+
 			{
 				test: /\.jsx?$/,
 				exclude: /node_modules/,
 				loader: 'babel-loader',
-				options: {
-					plugins: [
-						["@babel/plugin-transform-react-jsx", {
-							"pragma": "h",
-							"pragmaFrag": "Fragment",
-						}]
-					],
-				},
+				options: babel_options,
+			},
+
+			{
+				test: /\.tsx?$/,
+				use: 'ts-loader',
+				exclude: /node_modules/,
 			},
 		]
 	},
