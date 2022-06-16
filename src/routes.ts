@@ -1,7 +1,7 @@
 import Frontpage from './components/Frontpage'
 
 const routes = {
-    'frontpage': Frontpage,
+    frontpage: Frontpage,
 }
 
 export default routes
